@@ -144,8 +144,9 @@ melted_cor <- melt(cor_matrix)
 
 # Create heatmap
 ggplot(melted_cor, aes(x = Var1, y = Var2, fill = value)) +
-  geom_tile(color = "white") +
-  scale_fill_gradient2(low = "blue", high = "red", mid = "white",
+  geom_tile(color = "purple") +
+  geom_text(aes(label = round(value, 2)), color = "black", size = 4)+
+  scale_fill_gradient2(low = "lightblue", high = "red", mid = "purple",
                        midpoint = 0, limit = c(-1, 1),
                        name = "Correlation") +
   theme_minimal() +
